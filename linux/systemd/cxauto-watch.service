@@ -1,0 +1,16 @@
+[Unit]
+Description=学习通自动助手值守（每小时一轮）
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+# %h = 用户家目录；仓库默认放在 ~/chaoxing-auto，不一样请改下面两处路径。
+WorkingDirectory=%h/chaoxing-auto/linux
+ExecStart=/usr/bin/python3 %h/chaoxing-auto/linux/watch.py --once
+Environment=CX_HEADLESS=1
+# 登录态在 ~/.cxauto/browser_profile；首次跑之前先在有显示器的机器上跑 1_登录.sh。
+# 用户级服务，不用 root；装完跑 systemctl --user enable --now cxauto-watch.timer。
+
+[Install]
+WantedBy=default.target

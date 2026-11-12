@@ -1,0 +1,9 @@
+[Unit]
+Description=每小时跑一轮学习通值守
+
+[Timer]
+OnCalendar=hourly
+Persistent=true
+
+[Install]
+WantedBy=timers.target

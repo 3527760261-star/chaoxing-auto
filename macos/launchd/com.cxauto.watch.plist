@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <!-- 学习通自动助手 · launchd 每小时值守（示例） -->
+  <!-- 安装方法（见 macos/README.md「定时方法」）：把本文件复制到 -->
+  <!-- ~/Library/LaunchAgents/com.cxauto.watch.plist，再跑 -->
+  <!-- launchctl load ~/Library/LaunchAgents/com.cxauto.watch.plist -->
+  <!-- 路径里用了 ~，由下面 /bin/zsh -c 展开，不写死用户名。 -->
+  <!-- 如仓库不在 ~/workspace/your_files/chaoxing-auto，请改下面 cd 的路径。 -->
+  <key>Label</key>
+  <string>com.cxauto.watch</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/zsh</string>
+    <string>-c</string>
+    <string>cd ~/workspace/your_files/chaoxing-auto/macos &amp;&amp; python3 watch.py --once</string>
+  </array>
+  <key>StartInterval</key>
+  <integer>3600</integer>
+  <key>RunAtLoad</key>
+  <false/>
+</dict>
+</plist>

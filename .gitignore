@@ -1,0 +1,29 @@
+# 用户配置（含真实课程信息）：只放本机，绝不提交
+config.py
+
+# 凭证与会话：token / cookie / 登录态一律不进仓库
+session.json
+*.session.json
+*sessionid*
+*cookie*
+*.cookie
+*.key
+*.pem
+*.p12
+.env
+.env.*
+
+# 浏览器档案与运行数据（都在本机数据目录，不在仓库里）
+edge_profile/
+edge_clone/
+browser_profile/
+state.json
+scan.json
+reports/
+logs/
+shots/
+每日检查记录.md
+
+# Python 缓存
+__pycache__/
+*.py[cod]
